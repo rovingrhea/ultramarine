@@ -1,1 +1,3 @@
-# bgj-18
+# Bergen Game Jam 2018
+
+(Working) title in progress

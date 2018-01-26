@@ -1,28 +1,15 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class RotateToMouse : MonoBehaviour
 {
     public GameObject player;
-    public GameObject laser;
-    public GameObject hook;
+    public GameObject projectile;
     public GameObject spawnPoint1;
-    public GameObject spawnPoint2;
-    public Rigidbody2D rb;
-    public Rigidbody2D rb2;
-    public Rigidbody2D rb3;
-    public Rigidbody2D rbHook;
     public float speed;
-    public float hookSpeed;
-    public bool hasHooked;
-    public Vector2 hookDirection;
     private PlayerMovement playerMovement;
     public Vector2 direction;
     public Quaternion rotation;
-    private Quaternion rotation2;
-    private Vector3 direction2;
-    private Quaternion rotation3;
-    private Vector3 direction3;
     public Transform weaponPos;
 
     

@@ -4,5 +4,17 @@ using UnityEngine;
 
 // Controls characters heath. Could be expanded to have things like regen effects
 public class Health : MonoBehaviour {
-    public int health = 100;
+    public const int health = 100;
+    public int currentHealth = health;
+
+    public void TakeDamage(int damage) {
+        currentHealth -= damage;
+        if (currentHealth <= 0 && !isDead) {
+            Death();
+        }
+    }
+
+    public void Death() {
+        isDead = true;
+    }
 }

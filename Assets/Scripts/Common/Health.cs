@@ -8,19 +8,15 @@ public class Health : MonoBehaviour {
     public int currentHealth = health;
     public bool isDead;
 
-    void TakeDamage(int damage) {
+    public void TakeDamage(int damage) {
         currentHealth -= damage;
         if (currentHealth <= 0 && !isDead) {
             Death();
         }
     }
 
-    void onCollisionEnter(Collision touch) {
-
-    }
-
     void Death() {
         isDead = true;
-        Destroy(GameObject)
+        Destroy(gameObject);
     }
 }

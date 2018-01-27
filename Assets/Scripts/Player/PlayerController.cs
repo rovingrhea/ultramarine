@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour {
 	public float cooldownTime = 20F;
 	public Vector2 thisVelocity;
 
+    public BaseWeapon weapon;
+
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 	}
@@ -52,6 +54,19 @@ public class PlayerController : MonoBehaviour {
 				}
 				break;
 		}
+
+        // Aim and fire weapon on mouse 0
+        if(weapon != null)
+        {
+            weapon.AimWeapon(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+
+            if (Input.GetMouseButton(0))
+            {
+                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mousePos.z = 0;
+                weapon.Fire(mousePos);
+            }
+        }
 	}
 
 	public enum DashState {

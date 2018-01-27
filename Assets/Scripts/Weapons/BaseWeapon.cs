@@ -51,8 +51,6 @@ public class BaseWeapon : MonoBehaviour {
             return;
         }
 
-        AimWeapon();
-
         // Reloading
         if (reloadProgress <= reloadTime)
         {
@@ -65,14 +63,6 @@ public class BaseWeapon : MonoBehaviour {
 
         // Shooting cooldown
         if (shootIntervalProgress <= shootInterval) shootIntervalProgress += Time.deltaTime;
-
-        // Debug fire mechanic
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0;
-            Fire(mousePos);
-        }
     }
 
     public void Equip()
@@ -86,9 +76,9 @@ public class BaseWeapon : MonoBehaviour {
         equipped = false;
     }
 
-    private void AimWeapon()
+    public void AimWeapon(Vector3 target)
     {
-        Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 diff = target - transform.position;
         diff.Normalize();
 
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
@@ -112,7 +102,7 @@ public class BaseWeapon : MonoBehaviour {
             var projectileGO = Instantiate(projectile, bulletsOut.transform.position, new Quaternion(), null);
             projectileGO.SetActive(true);
             var newProjectile = projectileGO.GetComponent<BaseProjectile>();
-            newProjectile.Fire(target);
+            newProjectile.Fire(target, transform.parent.GetComponent<PlayerController>() != null);
         }
 
         shootIntervalProgress = 0;

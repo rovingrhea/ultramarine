@@ -22,6 +22,8 @@ public class BaseProjectile : MonoBehaviour {
 
     private LineRenderer lineRenderer;
 
+    private bool playerOwned;
+
     // Use this for initialization
     void Start () {
         lineRenderer = gameObject.GetComponent<LineRenderer>();
@@ -52,8 +54,10 @@ public class BaseProjectile : MonoBehaviour {
         }
     }
 
-    public void Fire(Vector2 target)
+    public void Fire(Vector2 target, bool playerOwned)
     {
+        this.playerOwned = playerOwned;
+
         direction = (target - (Vector2)transform.position);
         direction = Rotate(direction, Random.Range(-directionOffset, directionOffset)).normalized;
         float speed = Random.Range(speedMin, speedMax);
@@ -80,8 +84,16 @@ public class BaseProjectile : MonoBehaviour {
     {
         Health health = collider.GetComponent<Health>();
 
-        // ignore collisions with players
-        if (collider.GetComponent<PlayerController>() != null) return;
+        if(playerOwned)
+        {
+            // player owned ignore collisions with players
+            if (collider.GetComponent<PlayerController>() != null) return;
+        }
+        else
+        {
+            // enemy owned, ingore all other than player
+            if (collider.GetComponent<PlayerController>() == null) return;
+        }
 
         // dmg health objects
         if (health != null)

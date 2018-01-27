@@ -160,12 +160,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0745974e50022ae4caff9bf008a5d95d, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &55016630 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114193895181984548, guid: def41b79a7dce9f4e9f108e98deba94f,
-    type: 2}
-  m_PrefabInternal: {fileID: 369990246}
-  m_Script: {fileID: 11500000, guid: 35ce459bdf206b348b54879763cab0b6, type: 3}
 --- !u!1001 &147981477
 Prefab:
   m_ObjectHideFlags: 0
@@ -440,36 +434,6 @@ Prefab:
     - target: {fileID: 4525294749656036, guid: def41b79a7dce9f4e9f108e98deba94f, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114088035564062520, guid: def41b79a7dce9f4e9f108e98deba94f,
-        type: 2}
-      propertyPath: weapon
-      value: 
-      objectReference: {fileID: 55016630}
-    - target: {fileID: 114577084770118592, guid: def41b79a7dce9f4e9f108e98deba94f,
-        type: 2}
-      propertyPath: isPlayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61705337685383864, guid: def41b79a7dce9f4e9f108e98deba94f,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: 0.34657812
-      objectReference: {fileID: 0}
-    - target: {fileID: 61705337685383864, guid: def41b79a7dce9f4e9f108e98deba94f,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 0.71235144
-      objectReference: {fileID: 0}
-    - target: {fileID: 61705337685383864, guid: def41b79a7dce9f4e9f108e98deba94f,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: -0.004304886
-      objectReference: {fileID: 0}
-    - target: {fileID: 61705337685383864, guid: def41b79a7dce9f4e9f108e98deba94f,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.15695143
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: def41b79a7dce9f4e9f108e98deba94f, type: 2}

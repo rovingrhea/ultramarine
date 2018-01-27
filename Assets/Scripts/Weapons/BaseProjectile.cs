@@ -46,6 +46,10 @@ public class BaseProjectile : MonoBehaviour {
 
             lineRenderer.endWidth = lineWidth * ((age / lifetime * -1) + 1);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Fire(Vector2 target)

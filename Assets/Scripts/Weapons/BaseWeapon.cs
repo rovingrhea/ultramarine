@@ -11,31 +11,48 @@ public class BaseWeapon : MonoBehaviour {
     public int projectileCountMin = 5;
 
     public float reloadTime = 1;
-    public float reloadProgress = 1000;
+    private float reloadProgress = 1000;
 
     public float shootInterval = 0.2f;
-    public float shootIntervalProgress = 1000;
+    private float shootIntervalProgress = 1000;
 
     public float clipSize = 10;
-    public float ammoInClip = 10;
+    private float ammoInClip = 10;
+
+    public bool equipped = true;
 
     // Use this for initialization
     void Start () {
-        Fire((Vector2)transform.position + (Vector2.right * 10));
-	}
+        ammoInClip = clipSize;
+        shootIntervalProgress = shootInterval + 1;
+        reloadProgress = reloadTime + 1;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.DrawLine(transform.position, transform.position + (Vector3)Vector2.right, Color.red);
+        if(!equipped) return;
 
-        if(reloadProgress < reloadTime)
+
+        if (reloadProgress <= reloadTime)
         {
             reloadProgress += Time.deltaTime;
+
+            if(reloadProgress > reloadTime) ammoInClip = clipSize;
         }
 
-        if (shootIntervalProgress < shootInterval)
+        if (shootIntervalProgress <= shootInterval) shootIntervalProgress += Time.deltaTime;
+
+        Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        diff.Normalize();
+
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+
+        if(Input.GetMouseButtonDown(0))
         {
-            shootInterval += Time.deltaTime;
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0;
+            Fire(mousePos);
         }
     }
 
@@ -58,5 +75,11 @@ public class BaseWeapon : MonoBehaviour {
             newProjectile.Fire(target);
         }
 
+        shootIntervalProgress = 0;
+
+        if (ammoInClip <= 0)
+        {
+            reloadProgress = 0;
+        }
     }
 }

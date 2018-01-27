@@ -130,22 +130,22 @@ public class BoardCreator : MonoBehaviour
             // ... and for each room go through it's width.
             for (int j = 0; j < currentRoom.roomWidth; j++)
             {
-                
+
                 int xCoord = currentRoom.xPos + j;
-                
-                
+
+
 
                 // For each horizontal tile, go up vertically through the room's height.
                 for (int k = 0; k < currentRoom.roomHeight; k++)
                 {
                     int yCoord = currentRoom.yPos + k;
-                   
+
                     // The coordinates in the jagged array are based on the room's position and it's width and height.
                     tiles[xCoord][yCoord] = TileType.Floor;
                 }
             }
         }
-        
+
     }
 
 
@@ -280,3 +280,4 @@ public class BoardCreator : MonoBehaviour
         // Set the tile's parent to the board holder.
         tileInstance.transform.parent = boardHolder.transform;
     }
+}

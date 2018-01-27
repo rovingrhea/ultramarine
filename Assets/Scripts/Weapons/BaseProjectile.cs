@@ -93,12 +93,18 @@ public class BaseProjectile : MonoBehaviour {
         if(playerOwned)
         {
             // player owned ignore collisions with players
+            Debug.Log("player own");
             if (collider.GetComponent<PlayerController>() != null) return;
+
+            if (collider.transform.parent != null && 
+                collider.transform.parent.GetComponent<PlayerController>() != null) return;
         }
         else
         {
             // enemy owned, ingore all other than player
             if (collider.GetComponent<PlayerController>() == null) return;
+            if (collider.transform.parent != null &&
+                collider.transform.parent.GetComponent<PlayerController>() != null) return;
         }
 
         // dmg health objects

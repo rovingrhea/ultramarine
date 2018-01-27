@@ -52,8 +52,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Common\BoardCreator.cs" />
+     <Compile Include="Assets\Scripts\Common\Corridor.cs" />
      <Compile Include="Assets\Scripts\Common\Health.cs" />
      <Compile Include="Assets\Scripts\Common\LevelGenerator.cs" />
+     <Compile Include="Assets\Scripts\Common\Room.cs" />
      <Compile Include="Assets\Scripts\Enemies\BasicEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Enemies\JumpyEnemy.cs" />

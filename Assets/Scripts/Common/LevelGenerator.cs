@@ -14,31 +14,30 @@ public class LevelGenerator : MonoBehaviour {
 	void Start () {
 		StartCoroutine(GenerateLevel ());
 	}
+
 	IEnumerator GenerateLevel() {
 		for(int i = 0; i < tileAmount; i++){
-			int CapsuleDirection2D = Random.RangeInt(0, 3);
-			MoveGen(direction);
-			yield return new WaitForSeconds (waitTime);
+			int CapsuleDirection2D = Random.Range(0, 3);
+			MoveGen(dir);
+			yield return new WaitForSeconds(waitTime);
 		}
 		yield return 0;
 	}
-	void MoveGen(int direction){
-		switch (direction) {
+
+	void MoveGen(int dir){
+		switch(dir) {
 		case 0:
-			transform.position = new Vector3(transform.position.x, transform.position.y + tileSize, 0)
+			transform.position = new Vector3(transform.position.x, transform.position.y + tileSize, 0);
 			break;
 		case 1:
-			transform.position = new Vector3(transform.position.x + tileSize, transform.position.y, 0)
+			transform.position = new Vector3(transform.position.x + tileSize, transform.position.y, 0);
 			break;
 		case 2:
-			transform.position = new Vector3(transform.position.x, transform.position.y - tileSize, 0)
+			transform.position = new Vector3(transform.position.x, transform.position.y - tileSize, 0);
 			break;
-		case 3;
-			transform.position = new Vector3(transform.position.x - tileSize, transform.position.y, 0)
+		case 3:
+			transform.position = new Vector3(transform.position.x - tileSize, transform.position.y, 0);
 			break;
 		}
 	}
 }
-
-
-// read about IEnumerator 

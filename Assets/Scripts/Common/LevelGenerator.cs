@@ -24,9 +24,8 @@ public class LevelGenerator : MonoBehaviour {
 			int tile = Random.Range(tiles.Length, 0);
 
 			callMoveGen(direction);
-			MoveGen(direction);
 			createTile(tile);
-		}
+
 			yield return new WaitForSeconds(waitTime);
 		}
 		yield return 0;

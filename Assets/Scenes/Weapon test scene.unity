@@ -238,6 +238,11 @@ Prefab:
       propertyPath: reloadingIndicator
       value: 
       objectReference: {fileID: 1683261707}
+    - target: {fileID: 82258014179056276, guid: 439032be9102a8d499ea746e5e0ce00c,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.674
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 439032be9102a8d499ea746e5e0ce00c, type: 2}
   m_IsPrefabParent: 0

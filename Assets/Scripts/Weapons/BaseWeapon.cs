@@ -75,7 +75,7 @@ public class BaseWeapon : MonoBehaviour {
         }
 
         ammoInClip -= 1;
-        AudioSource.PlayClipAtPoint(fireSound, transform.position);
+        audioSource.PlayOneShot(fireSound);
 
         int projectileCount = Random.Range(projectileCountMin, projectileCountMax);
         for(int i = 0; i < projectileCount; i++)
@@ -92,7 +92,7 @@ public class BaseWeapon : MonoBehaviour {
 
     public virtual void StartReload()
     {
-        AudioSource.PlayClipAtPoint(reloadSound, transform.position);
+        audioSource.PlayOneShot(reloadSound);
 
         reloadProgress = 0;
         if (reloadingIndicator != null) reloadingIndicator.SetActive(true);

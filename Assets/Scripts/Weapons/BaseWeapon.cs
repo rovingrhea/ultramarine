@@ -53,6 +53,7 @@ public class BaseWeapon : MonoBehaviour {
         for(int i = 0; i < projectileCount; i++)
         {
             var projectileGO = Instantiate(projectile, bulletsOut.transform.position, new Quaternion(), null);
+            projectileGO.SetActive(true);
             var newProjectile = projectileGO.GetComponent<BaseProjectile>();
             newProjectile.Fire(target);
         }

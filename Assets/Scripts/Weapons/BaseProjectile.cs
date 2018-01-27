@@ -76,15 +76,18 @@ public class BaseProjectile : MonoBehaviour {
         return v;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        Health health = collision.collider.GetComponent<Health>();
+        Health health = collider.GetComponent<Health>();
 
         if (health != null)
         {
             health.TakeDamage(damage);
         }
 
-        Destroy(gameObject);
+        if(collider.GetComponent<PlayerController>() == null && !collider.isTrigger)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\Player\RotateToMouse.cs" />
      <Compile Include="Assets\Scripts\Weapons\BaseProjectile.cs" />
      <Compile Include="Assets\Scripts\Weapons\BaseWeapon.cs" />
+     <Compile Include="Assets\Scripts\Weapons\WeaponAnimations.cs" />
      <Compile Include="Assets\Scripts\Weapons\Weapons.cs" />
      <Compile Include="Assets\Scripts\Weapons\WeaponUI.cs" />
  <Reference Include="UnityEngine.UI">

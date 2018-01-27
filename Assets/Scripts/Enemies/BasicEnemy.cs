@@ -10,8 +10,11 @@ public class BasicEnemy : MonoBehaviour
     public int attackDamage = 10;
     public float reloadTime;
 
+    Rigidbody2D rb;
+
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         Rest();
     }
 
@@ -23,13 +26,14 @@ public class BasicEnemy : MonoBehaviour
     public void MoveToPlayer()
     {
         // Look at the player
-        transform.LookAt(target.position);
-        transform.Rotate(new Vector2(0, -90), Space.Self);
+        //transform.LookAt(target.position);
+        //transform.Rotate(new Vector2(0, -90), Space.Self);
 
         // Walk to the player
         if (Vector2.Distance(transform.position, target.position) > attackRange)
         {
-            transform.Translate(new Vector2(speed * Time.deltaTime, 0));
+            Vector3 direction = (target.position - transform.position).normalized;
+            rb.velocity = direction * speed * Time.deltaTime;
         }
     }
 

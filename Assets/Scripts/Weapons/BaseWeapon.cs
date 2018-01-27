@@ -49,7 +49,7 @@ public class BaseWeapon : MonoBehaviour {
         if (shootIntervalProgress <= shootInterval) shootIntervalProgress += Time.deltaTime;
 
         // Debug fire mechanic
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0;

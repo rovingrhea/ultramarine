@@ -8,6 +8,10 @@ public class Health : MonoBehaviour {
     public int currentHealth = health;
     public bool isDead;
 
+    private void Start()
+    {
+    }
+
     public void TakeDamage(int damage) {
         currentHealth -= damage;
         if (currentHealth <= 0 && !isDead) {
@@ -17,6 +21,13 @@ public class Health : MonoBehaviour {
 
     void Death() {
         isDead = true;
+        FindObjectOfType<Exit>().CountEnemies();
+
+        if(gameObject.tag == "Player")
+        {
+            FindObjectOfType<GameOver>().EndGame();
+        }
+
         Destroy(gameObject);
     }
 }

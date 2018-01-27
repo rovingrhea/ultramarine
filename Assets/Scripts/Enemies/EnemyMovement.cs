@@ -11,14 +11,26 @@ public class EnemyMovement : MonoBehaviour {
 	private BasicEnemy basicEnemy;
 
 	void Start () {
-		player = GameObject.FindGameObjectWithTag("Player");
 		basicEnemy = enemy.GetComponent<BasicEnemy>();
 		playerInViewRange = false;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (playerInViewRange == true) {
+        if (player == null)
+        {
+            PlayerController playerController = FindObjectOfType<PlayerController>();
+            if (playerController != null)
+            {
+                player = playerController.gameObject;
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        if (playerInViewRange == true) {
 			basicEnemy.MoveToPlayer();
 		}
 		if (playerInViewRange == false) {
@@ -29,6 +41,7 @@ public class EnemyMovement : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject == player) {
 			playerInViewRange = true;
+            viewRange.gameObject.SetActive(false);
 		}
 	}
 

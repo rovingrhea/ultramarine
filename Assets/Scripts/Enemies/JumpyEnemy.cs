@@ -65,6 +65,10 @@ public class JumpyEnemy : BasicEnemy {
         {
             collider.GetComponent<Health>().TakeDamage(10);
         }
+        else if (!collider.isTrigger && collider.tag == "Wall")
+        {
+            isJumping = false;
+        }
     }
 
     public override void Rest()

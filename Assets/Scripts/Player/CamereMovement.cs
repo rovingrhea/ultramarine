@@ -6,16 +6,18 @@ public class CamereMovement : MonoBehaviour {
 
     public GameObject player;
     public float speed = 2.5f;
-    private Rigidbody2D playerRb;
+    public float mouseLookEffect = 2.5f;
 
     private void Start()
     {
-        playerRb = player.GetComponent<Rigidbody2D>();
     }
 
     void Update () {
-        var pos = transform.position;
-        var target = player.transform.position + ((Vector3)playerRb.velocity * 0.5f);
+        Vector3 mouseLookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - player.transform.position;
+        mouseLookDirection = mouseLookDirection.normalized;
+
+        Vector3 pos = transform.position;
+        Vector3 target = player.transform.position + (mouseLookDirection * mouseLookEffect);
         pos = Vector3.Lerp(pos, target, speed * Time.deltaTime);
         pos.z = transform.position.z;
 

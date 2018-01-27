@@ -9,19 +9,21 @@ public class BaseWeapon : MonoBehaviour {
     public GameObject reloadingIndicator;
 
     public bool equipped = true;
+    public string weaponName = "Shot Gone";
 
     public int projectileCountMax = 3;
     public int projectileCountMin = 5;
     public float reloadTime = 1;
-    private float reloadProgress = 1000;
     public float shootInterval = 0.2f;
-    private float shootIntervalProgress = 1000;
     public float clipSize = 10;
-    private float ammoInClip = 10;
 
+    internal float reloadProgress = 1000;
+    private float shootIntervalProgress = 1000;
+    internal float ammoInClip = 10;
+
+    private AudioSource audioSource;
     public AudioClip fireSound;
     public AudioClip reloadSound;
-    private AudioSource audioSource;
 
     // Use this for initialization
     void Start () {
@@ -30,12 +32,24 @@ public class BaseWeapon : MonoBehaviour {
         reloadProgress = reloadTime + 1;
 
         audioSource = gameObject.GetComponent<AudioSource>();
+
+        if (equipped)
+        {
+            Equip();
+        }
+        else
+        {
+            Unequip();
+        }
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (!equipped) return;
+        if (!equipped)
+        {
+            return;
+        }
 
         AimWeapon();
 
@@ -43,6 +57,10 @@ public class BaseWeapon : MonoBehaviour {
         if (reloadProgress <= reloadTime)
         {
             PerformReload();
+        }
+        else if (Input.GetButtonDown("Reload") && ammoInClip < clipSize)
+        {
+            StartReload();
         }
 
         // Shooting cooldown
@@ -55,6 +73,17 @@ public class BaseWeapon : MonoBehaviour {
             mousePos.z = 0;
             Fire(mousePos);
         }
+    }
+
+    public void Equip()
+    {
+        equipped = true;
+        FindObjectOfType<WeaponUI>().Equip(this);
+    }
+
+    public void Unequip()
+    {
+        equipped = false;
     }
 
     private void AimWeapon()

@@ -7,6 +7,7 @@ public class Health : MonoBehaviour {
     public const int health = 100;
     public int currentHealth = health;
     public bool isDead;
+    public RectTransform healthBar;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class Health : MonoBehaviour {
         if (currentHealth <= 0 && !isDead) {
             Death();
         }
+        healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
     }
 
     void Death() {

@@ -6,17 +6,17 @@ public class SlurgfuckAnimations : MonoBehaviour {
 
     Rigidbody2D rb;
     Animator animator;
-    Transform player;
+    JumpyEnemy jumpy;
 
     void Start () {
         rb = transform.parent.GetComponent<Rigidbody2D>();
+        jumpy = transform.parent.GetComponent<JumpyEnemy>();
         animator = GetComponent<Animator>();
-        player = FindObjectOfType<PlayerController>().transform;
 	}
 	
 	void Update () {
         animator.SetFloat("moveSpeed", rb.velocity.magnitude);
-        animator.SetFloat("playerDistance", Vector3.Distance(player.position, transform.position));
+        animator.SetBool("isJumping", jumpy.isJumping);
 
         if ((rb.velocity.x > 0 && transform.localScale.x > 0) ||
             (rb.velocity.x < 0 && transform.localScale.x < 0))

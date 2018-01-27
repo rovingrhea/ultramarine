@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 50602144879104478}
   - component: {fileID: 114224582177818550}
   - component: {fileID: 114012057563850198}
-  - component: {fileID: 114102515297059934}
   - component: {fileID: 61434364898071658}
+  - component: {fileID: 114741673529195822}
   m_Layer: 0
   m_Name: Slurgfuck
   m_TagString: Untagged
@@ -170,7 +170,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.07
 --- !u!61 &61098226606342770
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -208,7 +208,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03570211, y: 0.1653949}
+  m_Offset: {x: 0.042796135, y: 0.06962538}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -219,7 +219,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45256686, y: 0.41929507}
+  m_Size: {x: 0.75051546, y: 0.837842}
   m_EdgeRadius: 0
 --- !u!95 &95487872933192462
 Animator:
@@ -251,22 +251,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewRange: {fileID: 61098226606342770}
   enemy: {fileID: 1151069831987196}
---- !u!114 &114102515297059934
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1151069831987196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbf72e56186b58a44b6d247374f1f73f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 100
-  attackRange: 1
-  attackDamage: 10
-  reloadTime: 0
 --- !u!114 &114224582177818550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -291,6 +275,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e8c3011fabc54439d90be131542709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114741673529195822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151069831987196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa6b014377d57b419d626bfc1e5b211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 30
+  attackRange: 8
+  attackDamage: 10
+  reloadTime: 0
+  weapon: {fileID: 0}
+  tooCloseToJumpDist: 4
+  isJumping: 0
+  jumpSpeed: 320
+  jumpLength: 6
 --- !u!212 &212930093644311626
 SpriteRenderer:
   m_ObjectHideFlags: 1

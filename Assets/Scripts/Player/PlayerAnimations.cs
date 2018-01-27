@@ -10,7 +10,10 @@ public class PlayerAnimations : MonoBehaviour {
     public float forwardZPos = 1;
     public float backwardZPos = -1;
 
-    public float turnThreshold = 0.25f;
+    public float turnThreshold = -0.25f;
+
+    public Transform target;
+    public bool isPlayer;
 
 	// Use this for initialization
 	void Start () {
@@ -22,9 +25,19 @@ public class PlayerAnimations : MonoBehaviour {
 	void Update () {
         //rb
         animator.SetFloat("velocity", rb.velocity.magnitude);
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        bool lookingUp = Vector3.Dot((mousePos - rb.transform.position).normalized, Vector3.down) < turnThreshold;
+        Vector3 lookPos;
+
+        if(isPlayer)
+        {
+            lookPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
+        else
+        {
+            lookPos = target.position;
+        }
+
+        bool lookingUp = Vector3.Dot((lookPos - rb.transform.position).normalized, Vector3.down) < turnThreshold;
         animator.SetBool("isLookingUp", lookingUp);
 
         Vector3 pos = transform.position;

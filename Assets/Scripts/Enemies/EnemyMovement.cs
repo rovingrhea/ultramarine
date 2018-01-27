@@ -22,17 +22,17 @@ public class EnemyMovement : MonoBehaviour {
 			basicEnemy.MoveToPlayer();
 		}
 		if (playerInViewRange == false) {
-			//basicEnemy.Rest();
+			basicEnemy.Rest();
 		}
 	}
 
-	void OnTriggerEnter(Collider other) {
+	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject == player) {
 			playerInViewRange = true;
 		}
 	}
 
-	void OntriggerExit(Collider other) {
+	void OntriggerExit2D(Collider2D other) {
 		if (other.gameObject == player) {
 			playerInViewRange = false;
 		}

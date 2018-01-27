@@ -10,6 +10,8 @@ public class PlayerAnimations : MonoBehaviour {
     public float forwardZPos = 1;
     public float backwardZPos = -1;
 
+    public float turnThreshold = 0.25f;
+
 	// Use this for initialization
 	void Start () {
         rb = transform.parent.GetComponent<Rigidbody2D>();
@@ -21,7 +23,9 @@ public class PlayerAnimations : MonoBehaviour {
         //rb
         animator.SetFloat("velocity", rb.velocity.magnitude);
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        bool lookingUp = mousePos.y > rb.transform.position.y;
+
+        bool lookingUp = Vector3.Dot((mousePos - rb.transform.position).normalized, Vector3.down) < turnThreshold;
+        Debug.Log(Vector3.Dot((mousePos - rb.transform.position).normalized, Vector3.down));
         animator.SetBool("isLookingUp", lookingUp);
 
         Vector3 pos = transform.position;

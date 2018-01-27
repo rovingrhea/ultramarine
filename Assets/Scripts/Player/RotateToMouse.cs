@@ -5,15 +5,15 @@ public class RotateToMouse : MonoBehaviour
 {
     public GameObject player;
     public GameObject projectile;
-    publicGameObject spawnPoint1;
+    public GameObject spawnPoint1;
     public float speed;
-    private PlayerMovement playerMovement;
+    //private PlayerMovement playerMovement;
     public Vector2 direction;
     public Quaternion rotation;
     public Transform weaponPos;
 
     private void Start() {
-        playerMovement = player.GetComponent<PlayerMovement>();
+        //playerMovement = player.GetComponent<PlayerMovement>();
     }
 
     void Update() {

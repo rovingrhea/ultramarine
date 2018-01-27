@@ -6,6 +6,7 @@ using UnityEngine;
 public class Health : MonoBehaviour {
     public const int health = 100;
     public int currentHealth = health;
+    public bool isDead;
 
     public void TakeDamage(int damage) {
         currentHealth -= damage;

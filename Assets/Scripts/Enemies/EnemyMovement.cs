@@ -58,11 +58,11 @@ public class BasicEnemy : MonoBehaviour {
 	public void MoveToPlayer() {
 		// Look at the player
 		transform.LookAt(target.position);
-		transform.Rotate(new Vector2(0, -90, 0), Space.Self);
+		transform.Rotate(new Vector2(0, -90), Space.Self);
 
 		// Walk to the player
 		if (Vector2.Distance(transform.position, target.position) > attackRange) {
-			transform.Translate(new Vector2(speed * Time.deltaTime, 0, 0));
+			transform.Translate(new Vector2(speed * Time.deltaTime, 0));
 		}
 	}
 

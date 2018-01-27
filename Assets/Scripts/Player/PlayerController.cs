@@ -31,21 +31,21 @@ public class PlayerController : MonoBehaviour {
 			case DashState.Ready:
 				var isDashKeyDown = Input.GetKeyDown(KeyCode.LeftShift);
 				if(isDashKeyDown) {
-					thisVelocity = rigidbody.velocity
-					rigidbody.velocity = new Vector2(rigidbody.velocity.x * 5f, rigidbody.velocity.y);
+					//thisVelocity = rigidbody.velocity
+					//rigidbody.velocity = new Vector2(rigidbody.velocity.x * 5f, rigidbody.velocity.y);
 					dashState = DashState.Dashing;
 				}
 				break;
-				case DashState.Dash:
+				case DashState.Dashing:
 				dashTime *= Time.deltaTime * 2;
 				if(dashTime >= maxDash) {
 					dashTime = maxDash;
-					rigidbody.velocity = thisVelocity;
+					//rigidbody.velocity = thisVelocity;
 					dashState = DashState.Cooldown;
 				}
 				break;
 				case DashState.Cooldown:
-				cooldownTime -= Time.deltaTime:
+                cooldownTime -= Time.deltaTime;
 				if(cooldownTime <= 0){
 					cooldownTime = 0;
 					dashState = DashState.Ready;

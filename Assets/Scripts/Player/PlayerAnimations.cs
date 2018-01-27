@@ -14,9 +14,11 @@ public class PlayerAnimations : MonoBehaviour {
 
     public Transform target;
     public bool isPlayer;
+    public bool lookingUp;
+    public Vector3 lookDir;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         rb = transform.parent.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 	}
@@ -37,7 +39,8 @@ public class PlayerAnimations : MonoBehaviour {
             lookPos = target.position;
         }
 
-        bool lookingUp = Vector3.Dot((lookPos - rb.transform.position).normalized, Vector3.down) < turnThreshold;
+        lookDir = (lookPos - rb.transform.position).normalized;
+        lookingUp = Vector3.Dot(lookDir, Vector3.down) < turnThreshold;
         animator.SetBool("isLookingUp", lookingUp);
 
         Vector3 pos = transform.position;

@@ -66,6 +66,12 @@ public class BaseProjectile : MonoBehaviour {
         float distance = Random.Range(rangeMin, rangeMax);
         lifetime = distance / speed;
         age = 0;
+
+        Vector3 diff = (Vector3)target - transform.position;
+        diff.Normalize();
+
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
     }
 
     private Vector2 Rotate(Vector2 v, float degrees)

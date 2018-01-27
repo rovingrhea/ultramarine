@@ -53,13 +53,17 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Common\Health.cs" />
      <Compile Include="Assets\Scripts\Common\LevelGenerator.cs" />
+     <Compile Include="Assets\Scripts\Enemies\BasicEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyMovement.cs" />
+     <Compile Include="Assets\Scripts\Enemies\SlurgfuckAnimations.cs" />
      <Compile Include="Assets\Scripts\Player\CamereMovement.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerAnimations.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player\RotateToMouse.cs" />
      <Compile Include="Assets\Scripts\Weapons\BaseProjectile.cs" />
      <Compile Include="Assets\Scripts\Weapons\BaseWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\Weapons.cs" />
+     <Compile Include="Assets\Scripts\Weapons\WeaponUI.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

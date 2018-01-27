@@ -25,7 +25,6 @@ public class PlayerAnimations : MonoBehaviour {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         bool lookingUp = Vector3.Dot((mousePos - rb.transform.position).normalized, Vector3.down) < turnThreshold;
-        Debug.Log(Vector3.Dot((mousePos - rb.transform.position).normalized, Vector3.down));
         animator.SetBool("isLookingUp", lookingUp);
 
         Vector3 pos = transform.position;

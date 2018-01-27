@@ -24,9 +24,8 @@ public class LevelGenerator : MonoBehaviour {
 			int tile = Random.Range(tiles.Length, 0);
 
 			callMoveGen(direction);
-			MoveGen(direction);
 			createTile(tile);
-		}
+
 			yield return new WaitForSeconds(waitTime);
 		}
 		yield return 0;
@@ -66,22 +65,4 @@ public class LevelGenerator : MonoBehaviour {
 		tileObject = Instantiate(tiles[tileIndex], transform.position, transform.rotation) as GameObject;
 		createdTiles.Add(tileObject.transform.position);
 	}
-  void MoveGen(int dir)
-  {
-      switch (dir)
-      {
-          case 0:
-              transform.position = new Vector3(transform.position.x, transform.position.y + tileSize, 0);
-              break;
-          case 1:
-              transform.position = new Vector3(transform.position.x + tileSize, transform.position.y, 0);
-              break;
-          case 2:
-              transform.position = new Vector3(transform.position.x, transform.position.y - tileSize, 0);
-              break;
-          case 3:
-              transform.position = new Vector3(transform.position.x - tileSize, transform.position.y, 0);
-              break;
-      }
-  }
 }

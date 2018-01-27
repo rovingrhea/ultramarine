@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Common\BoardCreator.cs" />
      <Compile Include="Assets\Scripts\Common\Health.cs" />
      <Compile Include="Assets\Scripts\Common\LevelGenerator.cs" />
      <Compile Include="Assets\Scripts\Enemies\BasicEnemy.cs" />

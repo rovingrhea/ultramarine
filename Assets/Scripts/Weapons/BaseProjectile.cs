@@ -80,14 +80,17 @@ public class BaseProjectile : MonoBehaviour {
     {
         Health health = collider.GetComponent<Health>();
 
+        // ignore collisions with players
+        if (collider.GetComponent<PlayerController>() != null) return;
+
+        // dmg health objects
         if (health != null)
         {
             health.TakeDamage(damage);
-        }
-
-        if(collider.GetComponent<PlayerController>() == null && !collider.isTrigger)
-        {
             Destroy(gameObject);
         }
+
+        // Destroy when colliders are hit
+        if (!collider.isTrigger) Destroy(gameObject);
     }
 }

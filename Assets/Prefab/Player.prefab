@@ -823,7 +823,7 @@ MonoBehaviour:
   reloadTime: 2
   shootInterval: 0.6
   clipSize: 10
-  fireSound: {fileID: 8300000, guid: 76135b547ed834d459ef56c844accd10, type: 3}
+  fireSound: {fileID: 8300000, guid: 3d982e1a61f0c224da870536d095714c, type: 3}
   reloadSound: {fileID: 8300000, guid: fe0d1888c51aba248a6a0dfd84f8a465, type: 3}
 --- !u!114 &114260290497918990
 MonoBehaviour:

@@ -24,6 +24,7 @@ public class BoardCreator : MonoBehaviour
     public GameObject[] pickupTiles;
     public GameObject[] decorationTiles;
     public GameObject[] interactableTiles;
+    public GameObject[] roofTiles;
     public GameObject player;
     public GameObject exit;
 
@@ -33,6 +34,9 @@ public class BoardCreator : MonoBehaviour
     private GameObject boardHolder;                           // GameObject that acts as a container for all other tiles.
     public bool playerCreated;
     public bool exitCreated;
+
+    public float scale = 2;
+    public int enemyChancePercent = 1;
 
     private void Start()
     {
@@ -48,6 +52,8 @@ public class BoardCreator : MonoBehaviour
 
         InstantiateTiles();
         InstantiateOuterWalls();
+
+        FindObjectOfType<Exit>().CountEnemies();
     }
 
 
@@ -104,14 +110,14 @@ public class BoardCreator : MonoBehaviour
             if (playerCreated == false)
             {
                 Vector3 playerPos = new Vector3(rooms[i].xPos, rooms[i].yPos, 0);
-                Instantiate(player, playerPos, Quaternion.identity);
+                Instantiate(player, playerPos * scale, Quaternion.identity);
                 print("created player");
                 playerCreated = true;
             }
             if (exitCreated == false)
             {
                 Vector3 exitPos = new Vector3(rooms[0].xPos, rooms[0].yPos, 0);
-                GameObject levelExit = Instantiate (exit, exitPos, Quaternion.identity);
+                GameObject levelExit = Instantiate (exit, exitPos * scale, Quaternion.identity);
                 levelExit.name = "Exit";
                 exitCreated = true;
             }
@@ -201,16 +207,20 @@ public class BoardCreator : MonoBehaviour
                 // If the tile type is Wall...
                 if (tiles[i][j] == TileType.Wall)
                 {
-                    // ... instantiate a wall over the top.
-                    InstantiateFromArray(wallTiles, i, j);
+                    if (j - 1  < 0 || tiles[i][j - 1] == TileType.Wall)
+                    {
+                        InstantiateFromArray(roofTiles, i, j);
+                    }
+                    else
+                    {
+                        InstantiateFromArray(wallTiles, i, j);
+                    }
                 }
-                // If the tile type is Wall...
-                if (tiles[i][j] == TileType.Enemy)
+                else if(Random.Range(0, 100) < enemyChancePercent)
                 {
-                    // ... instantiate a wall over the top.
-                    InstantiateFromArray(enemyTiles, i, j);
+                    int randomIndex = Random.Range(0, enemyTiles.Length);
+                    GameObject enemy = Instantiate(enemyTiles[randomIndex], new Vector3(i, j,0) * scale, Quaternion.identity);
                 }
-
             }
         }
     }
@@ -272,10 +282,11 @@ public class BoardCreator : MonoBehaviour
         int randomIndex = Random.Range(0, prefabs.Length);
 
         // The position to be instantiated at is based on the coordinates.
-        Vector3 position = new Vector3(xCoord, yCoord, 0f);
+        Vector3 position = new Vector3(xCoord, yCoord, 0f) * scale;
 
         // Create an instance of the prefab from the random index of the array.
         GameObject tileInstance = Instantiate(prefabs[randomIndex], position, Quaternion.identity) as GameObject;
+        tileInstance.transform.localScale *= scale;
 
         // Set the tile's parent to the board holder.
         tileInstance.transform.parent = boardHolder.transform;

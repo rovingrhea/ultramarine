@@ -10,9 +10,24 @@ public class CamereMovement : MonoBehaviour {
 
     private void Start()
     {
+        
     }
 
     void Update () {
+
+        if(player == null)
+        {
+            PlayerController playerController = FindObjectOfType<PlayerController>();
+            if(playerController != null)
+            {
+                player = playerController.gameObject;
+            }
+            else
+            {
+                return;
+            }
+        }
+
         Vector3 mouseLookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - player.transform.position;
         mouseLookDirection = mouseLookDirection.normalized;
 

@@ -22,7 +22,14 @@ public class BasicEnemy : MonoBehaviour
 
     protected virtual void Update()
     {
-
+        if(target == null)
+        {
+            PlayerController player = FindObjectOfType<PlayerController>();
+            if (player!= null)
+            {
+                target = player.transform;
+            }
+        }
     }
 
     public virtual void MoveToPlayer()

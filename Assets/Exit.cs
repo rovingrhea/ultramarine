@@ -22,7 +22,7 @@ public class Exit : MonoBehaviour {
 
         if(ui!= null) ui.text = remaining.ToString();
 
-        if(remaining == 0)
+        if(remaining <= 0)
         {
             closed.SetActive(false);
             open.SetActive(true);

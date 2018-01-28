@@ -236,8 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec52cb8368124b10a9043b103d28cdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 50
-  rows: 50
+  columns: 13
+  rows: 13
   numRooms:
     m_Min: 15
     m_Max: 20
@@ -254,6 +254,35 @@ MonoBehaviour:
     m_Min: 5
     m_Max: 10
   floorTiles:
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1693042799242836, guid: af97a1adc56f115439b46f2362d69e67, type: 2}
+  - {fileID: 1021730333994658, guid: e8425fced7a2c82478521d6d0cb1077c, type: 2}
+  - {fileID: 1348089787767760, guid: b3118d0bc38bcc04c8fa016afd0d39c1, type: 2}
+  - {fileID: 1060967707238970, guid: eb69247af3a4cf2479aac34631b0fb4b, type: 2}
+  - {fileID: 1192174155409676, guid: 3baf3d200371d344290a5846f17c8bc6, type: 2}
+  - {fileID: 1958811521601218, guid: f4b906b63bf1c154caaa99e2dc8d84d7, type: 2}
+  - {fileID: 1145525152675722, guid: 34fb48649d31fb240bb7e06dd2336cd3, type: 2}
+  - {fileID: 1140973447484284, guid: abd191c23f1b26948b00fb5cedef38ff, type: 2}
+  - {fileID: 1934718172295370, guid: 997048d9308ef0940abeca03df93d590, type: 2}
+  - {fileID: 1164837489706850, guid: 8440850aa13368747a2eb6624c18f60f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
+  - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
   - {fileID: 1149563304309218, guid: 31f0ead25d7381c45b91fc04626e063f, type: 2}
   wallTiles:
   - {fileID: 1310448595491590, guid: f95e40475d4173f47ba49e99bec3787e, type: 2}
@@ -273,7 +302,7 @@ MonoBehaviour:
   playerCreated: 0
   exitCreated: 0
   scale: 2
-  enemyChancePercent: 3
+  enemyChancePercent: 5
 --- !u!4 &185848327
 Transform:
   m_ObjectHideFlags: 0

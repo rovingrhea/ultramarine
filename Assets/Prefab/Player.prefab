@@ -800,7 +800,7 @@ MonoBehaviour:
   bulletsOut: {fileID: 1893845862630186}
   reloadingIndicator: {fileID: 1365022628846744}
   equipped: 1
-  weaponName: Shot Gone
+  weaponName: PL45M4 BL45TER
   projectileCountMax: 1
   projectileCountMin: 1
   reloadTime: 2

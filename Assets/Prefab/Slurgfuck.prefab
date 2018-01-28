@@ -127,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1151069831987196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.85, y: 1.354884, z: -0.11998072}
+  m_LocalPosition: {x: 1.5826713, y: -1.0030172, z: -0.11998072}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4736736229161332}
@@ -265,6 +265,8 @@ MonoBehaviour:
   currentHealth: 100
   isDead: 0
   healthBar: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: a370438e84ea1184ca6e14d571acfe6a, type: 3}
+  damageTaken: {fileID: 8300000, guid: a370438e84ea1184ca6e14d571acfe6a, type: 3}
 --- !u!114 &114624592050845134
 MonoBehaviour:
   m_ObjectHideFlags: 1

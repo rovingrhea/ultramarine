@@ -9,6 +9,9 @@ public class Health : MonoBehaviour {
     public bool isDead;
     public RectTransform healthBar;
 
+    public AudioClip deathClip;
+    public AudioClip damageTaken;
+
     private void Start()
     {
     }
@@ -18,10 +21,19 @@ public class Health : MonoBehaviour {
         if (currentHealth <= 0 && !isDead) {
             Death();
         }
+        else if(damageTaken != null)
+        {
+            AudioSource.PlayClipAtPoint(damageTaken, transform.position);
+        }
         healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
     }
 
     void Death() {
+        if(deathClip != null)
+        {
+            AudioSource.PlayClipAtPoint(deathClip, transform.position);
+        }
+
         isDead = true;
         FindObjectOfType<Exit>().CountEnemies();
 

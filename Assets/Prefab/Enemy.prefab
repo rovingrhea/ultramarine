@@ -633,7 +633,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8, y: 8}
+  m_Size: {x: 16, y: 16}
   m_EdgeRadius: 0
 --- !u!61 &61784383974536492
 BoxCollider2D:
@@ -851,7 +851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 20
+  speed: 80
   attackRange: 5
   attackDamage: 10
   reloadTime: 0

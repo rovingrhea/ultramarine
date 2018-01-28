@@ -194,7 +194,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8, y: 8}
+  m_Size: {x: 14, y: 14}
   m_EdgeRadius: 0
 --- !u!61 &61434364898071658
 BoxCollider2D:
@@ -264,6 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 100
   isDead: 0
+  healthBar: {fileID: 0}
 --- !u!114 &114624592050845134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -287,14 +288,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 30
+  speed: 60
   attackRange: 8
   attackDamage: 10
   reloadTime: 0
   weapon: {fileID: 0}
   tooCloseToJumpDist: 4
   isJumping: 0
-  jumpSpeed: 320
+  jumpSpeed: 800
   jumpLength: 6
 --- !u!212 &212930093644311626
 SpriteRenderer:

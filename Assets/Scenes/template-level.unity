@@ -296,6 +296,7 @@ MonoBehaviour:
   - {fileID: 1691996882869238, guid: a787ddc87615bb248a99bf09dce75f33, type: 2}
   enemyTiles:
   - {fileID: 1151069831987196, guid: 0745974e50022ae4caff9bf008a5d95d, type: 2}
+  - {fileID: 1673232791633274, guid: 61ebdeadfab12054dac670f8656e8c89, type: 2}
   pickupTiles: []
   decorationTiles: []
   interactableTiles: []
@@ -306,7 +307,7 @@ MonoBehaviour:
   playerCreated: 0
   exitCreated: 0
   scale: 2
-  enemyChancePercent: 1
+  enemyChancePercent: 3
 --- !u!4 &185848327
 Transform:
   m_ObjectHideFlags: 0

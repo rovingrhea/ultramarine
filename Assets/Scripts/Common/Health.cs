@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Controls characters heath. Could be expanded to have things like regen effects
 public class Health : MonoBehaviour {
@@ -14,6 +15,10 @@ public class Health : MonoBehaviour {
 
     private void Start()
     {
+        if(gameObject.tag == "Player")
+        {
+            healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<RectTransform>();
+        }
     }
 
     public void TakeDamage(int damage) {

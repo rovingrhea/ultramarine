@@ -45,7 +45,16 @@ public class EnemyMovement : MonoBehaviour {
 		}
 	}
 
-	void OntriggerExit2D(Collider2D other) {
+    void OnTriggerStay2D(Collider2D other)
+    {
+        //if (other.gameObject == player)
+        //{
+        //    playerInViewRange = true;
+        //    viewRange.gameObject.SetActive(false);
+        //}
+    }
+
+    void OntriggerExit2D(Collider2D other) {
 		if (other.gameObject == player) {
 			playerInViewRange = false;
 		}

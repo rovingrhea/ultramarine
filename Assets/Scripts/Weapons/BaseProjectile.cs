@@ -113,6 +113,8 @@ public class BaseProjectile : MonoBehaviour {
             Destroy(gameObject);
         }
 
+        Debug.Log("test");
+
         // Destroy when colliders are hit
         if (!collider.isTrigger) Destroy(gameObject);
     }

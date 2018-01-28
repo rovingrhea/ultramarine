@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CutScene.cs" />
      <Compile Include="Assets\Exit.cs" />
      <Compile Include="Assets\GameOver.cs" />
      <Compile Include="Assets\Scripts\Common\BoardCreator.cs" />

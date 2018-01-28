@@ -25,6 +25,17 @@ public class Health : MonoBehaviour {
         isDead = true;
         FindObjectOfType<Exit>().CountEnemies();
 
+        var animators = GetComponentsInChildren<Animator>();
+
+        foreach(var animator in animators)
+        {
+            animator.SetBool("isDead", true);
+            animator.transform.parent = null;
+            MonoBehaviour animationController = animator.gameObject.GetComponent<PlayerAnimations>();
+            if(animationController == null) animationController = animator.gameObject.GetComponent<SlurgfuckAnimations>();
+            if (animationController != null) Destroy(animationController);
+        }
+
         if(gameObject.tag == "Player")
         {
             FindObjectOfType<GameOver>().EndGame();

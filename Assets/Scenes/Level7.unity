@@ -310,7 +310,7 @@ MonoBehaviour:
   playerCreated: 0
   exitCreated: 0
   scale: 2
-  enemyChancePercent: 7
+  enemyChancePercent: 8
 --- !u!4 &185848327
 Transform:
   m_ObjectHideFlags: 0

@@ -201,13 +201,10 @@ public class BoardCreator : MonoBehaviour
         {
             for (int j = 0; j < tiles[i].Length; j++)
             {
-                // ... and instantiate a floor tile for it.
-                InstantiateFromArray(floorTiles, i, j);
-
                 // If the tile type is Wall...
                 if (tiles[i][j] == TileType.Wall)
                 {
-                    if (j - 1  < 0 || tiles[i][j - 1] == TileType.Wall)
+                    if (j - 1 < 0 || tiles[i][j - 1] == TileType.Wall)
                     {
                         InstantiateFromArray(roofTiles, i, j);
                     }
@@ -216,10 +213,16 @@ public class BoardCreator : MonoBehaviour
                         InstantiateFromArray(wallTiles, i, j);
                     }
                 }
-                else if(Random.Range(0, 100) < enemyChancePercent)
+                else
                 {
-                    int randomIndex = Random.Range(0, enemyTiles.Length);
-                    GameObject enemy = Instantiate(enemyTiles[randomIndex], new Vector3(i, j,0) * scale, Quaternion.identity);
+                    // ... otherwise instantiate a floor tile for it.
+                    InstantiateFromArray(floorTiles, i, j);
+
+                    if (Random.Range(0, 100) < enemyChancePercent)
+                    {
+                        int randomIndex = Random.Range(0, enemyTiles.Length);
+                        GameObject enemy = Instantiate(enemyTiles[randomIndex], new Vector3(i, j, 0) * scale, Quaternion.identity);
+                    }
                 }
             }
         }

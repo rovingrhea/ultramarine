@@ -68,7 +68,11 @@ public class BaseWeapon : MonoBehaviour {
     public void Equip()
     {
         equipped = true;
-        FindObjectOfType<WeaponUI>().Equip(this);
+
+        if(transform.parent.GetComponent<PlayerController>() != null)
+        {
+            FindObjectOfType<WeaponUI>().Equip(this);
+        }
     }
 
     public void Unequip()

@@ -339,7 +339,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1787473239260564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.405817, y: 20.640818, z: 0}
+  m_LocalPosition: {x: 0.98567116, y: -1.5694013, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4919579958676818}
@@ -555,7 +555,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.674
+  m_Volume: 0.127
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -800,7 +800,7 @@ MonoBehaviour:
   bulletsOut: {fileID: 1893845862630186}
   reloadingIndicator: {fileID: 1365022628846744}
   equipped: 1
-  weaponName: Shot Gone
+  weaponName: PL45M4 BL45TER
   projectileCountMax: 1
   projectileCountMin: 1
   reloadTime: 2
@@ -908,6 +908,8 @@ MonoBehaviour:
   currentHealth: 100
   isDead: 0
   healthBar: {fileID: 224150081545337808}
+  deathClip: {fileID: 8300000, guid: f610a7b2b8bac354a98eea2581caa931, type: 3}
+  damageTaken: {fileID: 8300000, guid: 8b7f66636c48aa04cad2e4ccfa986667, type: 3}
 --- !u!120 &120325844266287212
 LineRenderer:
   m_ObjectHideFlags: 1

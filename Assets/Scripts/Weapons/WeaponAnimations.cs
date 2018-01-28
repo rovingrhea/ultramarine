@@ -15,7 +15,8 @@ public class WeaponAnimations : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        animator.SetBool("lookingUp", player.lookingUp);
+        if(animator != null)
+            animator.SetBool("lookingUp", player.lookingUp);
 
         bool lookingRight = Vector2.Dot(player.lookDir.normalized, Vector3.left) < 0;
 

@@ -89,8 +89,9 @@ public class BaseProjectile : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Health health = collider.GetComponent<Health>();
+        Debug.Log(collider.gameObject.name);
 
-        if(playerOwned)
+        if (playerOwned)
         {
             // player owned ignore collisions with players
             if (collider.GetComponent<PlayerController>() != null) return;
@@ -101,9 +102,9 @@ public class BaseProjectile : MonoBehaviour {
         else
         {
             // enemy owned, ingore all other than player
-            if (collider.GetComponent<PlayerController>() == null) return;
+            if (collider.GetComponent<EnemyMovement>() != null) return;
             if (collider.transform.parent != null &&
-                collider.transform.parent.GetComponent<PlayerController>() != null) return;
+                collider.transform.parent.GetComponent<EnemyMovement>() != null) return;
         }
 
         // dmg health objects
@@ -113,9 +114,10 @@ public class BaseProjectile : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        Debug.Log("test");
+        Debug.Log("test", collider.gameObject);
 
         // Destroy when colliders are hit
         if (!collider.isTrigger) Destroy(gameObject);
     }
+
 }

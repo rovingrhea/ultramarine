@@ -8,6 +8,8 @@ public class CutScene : MonoBehaviour {
     public float zoom;
     public float zoomSpeed;
 
+    public bool endScene;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -19,7 +21,14 @@ public class CutScene : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if(endScene)
+            {
+                Application.Quit();
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
     }
 }

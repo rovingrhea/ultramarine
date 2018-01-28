@@ -18,7 +18,7 @@ public class Exit : MonoBehaviour {
 
     public void CountEnemies()
     {
-        int remaining = GameObject.FindObjectsOfType<EnemyMovement>().Length - 1;
+        int remaining = GameObject.FindObjectsOfType<EnemyMovement>().Length;
 
         if(ui!= null) ui.text = remaining.ToString();
 
@@ -31,7 +31,7 @@ public class Exit : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        if(open.activeSelf && collider.tag == "Player")
+        if(collider.tag == "Player")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

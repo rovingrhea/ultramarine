@@ -852,7 +852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 80
-  attackRange: 5
+  attackRange: 7.5
   attackDamage: 10
   reloadTime: 0
   weapon: {fileID: 114677462543416910}

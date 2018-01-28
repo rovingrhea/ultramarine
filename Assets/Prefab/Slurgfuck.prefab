@@ -81,7 +81,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1682460678977884
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a87f373a8af0749a232254c360a8ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 100
+  currentHealth: 20
   isDead: 0
   healthBar: {fileID: 224648811240486590}
   deathClip: {fileID: 8300000, guid: a370438e84ea1184ca6e14d571acfe6a, type: 3}
